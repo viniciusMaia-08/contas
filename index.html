@@ -271,7 +271,7 @@ async function createBin(data) {
 
 async function readBin() {
   const r = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
-    headers:{'X-Access-Key':API_KEY}
+    headers:{'X-Access-Key':API_KEY,'Cache-Control':'no-cache','Pragma':'no-cache'},cache:'no-store'
   });
   const j = await r.json();
   return j.record || null;

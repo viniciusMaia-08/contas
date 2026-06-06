@@ -551,6 +551,13 @@ function delExpense(id,idx) {
   save(); render();
 }
 
+function changeMonth(dir){
+  viewMonth+=dir;
+  if(viewMonth>11){viewMonth=0;viewYear++;}
+  if(viewMonth<0){viewMonth=11;viewYear--;}
+  render();
+}
+
 function recChange(){
   document.getElementById('parcelas-row').classList.toggle('show',document.getElementById('f-rec').value==='parcelado');
 }
